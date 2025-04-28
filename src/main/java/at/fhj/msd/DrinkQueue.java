@@ -10,4 +10,11 @@ public class DrinkQueue {
 
     private Queue<Drink> drinks = new LinkedList<>();
 
+public boolean isEmpty() {
+    return drinks.isEmpty();
+}
+ 
+public void clear() {
+    drinks.clear();
+}
 }
