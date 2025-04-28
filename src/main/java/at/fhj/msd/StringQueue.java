@@ -3,6 +3,7 @@ package at.fhj.msd;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+import at.fhj.msd.IQueue;
 
 /**
  * A bounded queue implementation for storing String objects.
