@@ -42,4 +42,16 @@ public class Cocktail extends Drink {
         }
         return (alcoholVolume / totalVolume) * 100;
     }
+
+    @Override
+    public boolean isAlcoholic() {
+      for (Liquid l : liquids) {
+          if (l.isAlcoholic()) {
+              return true;
+          }
+      }
+      return false;
+    }
+  
+
 }
