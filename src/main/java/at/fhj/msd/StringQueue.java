@@ -1,112 +1,62 @@
-package at.fhj.msd;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
-import at.fhj.msd.IQueue;
 
 /**
- * A bounded queue implementation for storing String objects.
  */
 public class StringQueue implements IQueue {
 
-    /**
-     * The list to store queue elements.
-     */
-    private List<String> elements = new ArrayList<>();
+    private List<String> elements = new ArrayList<String>();
+    private int maxSize = 5;
 
-    /**
-     * The maximum size of the queue.
-     */
-    private int maxSize;
-
-    /**
-     * Constructs a StringQueue with the specified maximum size.
-     *
-     * @param maxSize The maximum number of elements the queue can hold
-     * @throws IllegalArgumentException if maxSize is non-positive
-     */
     public StringQueue(int maxSize) {
-        if (maxSize <= 0) {
-            throw new IllegalArgumentException("Max size must be positive");
-        }
         this.maxSize = maxSize;
     }
 
-    /**
-     * Adds the specified String to the queue.
-     *
-     * @param obj The String to add
-     * @return true if the String was added successfully, false if the queue is
-     * full
-     */
     @Override
     public boolean offer(String obj) {
-        if (elements.size() >= maxSize) {
+        if (elements.size() < maxSize)
+            elements.add(obj);
+        else
             return false;
-        }
-        elements.add(obj);
+
         return true;
     }
 
-    /**
-     * Retrieves and removes the first String from the queue.
-     *
-     * @return The first String in the queue, or null if the queue is empty
-     */
     @Override
     public String poll() {
-        if (elements.isEmpty()) {
-            return null;
+        String element = peek();
+
+        if (elements.size() > 0) {
+            elements.remove(0);
         }
-        return elements.remove(0);
+
+        return element;
     }
 
-    /**
-     * Retrieves and removes the first String from the queue, throwing an
-     * exception if the queue is empty.
-     *
-     * @return The first String in the queue
-     * @throws java.util.NoSuchElementException if the queue is empty
-     */
     @Override
     public String remove() {
         String element = poll();
-        if (element == null) {
-            throw new NoSuchElementException("Queue is empty");
-        }
+        if (element == null)
+            throw new NoSuchElementException("there's no element any more");
+
         return element;
     }
 
-    /**
-     * Retrieves the first String in the queue without removing it.
-     *
-     * @return The first String in the queue, or null if the queue is empty
-     */
     @Override
     public String peek() {
-        if (elements.isEmpty()) {
+        if (elements.size() > 0)
+            return elements.get(0);
+        else
             return null;
-        }
-        return elements.get(0);
     }
 
-    /**
-     * Retrieves the first String in the queue without removing it, throwing an
-     * exception if the queue is empty.
-     *
-     * @return The first String in the queue
-     * @throws java.util.NoSuchElementException if the queue is empty
-     */
     @Override
     public String element() {
         String element = peek();
-        if (element == null) {
-            throw new NoSuchElementException("Queue is empty");
-        }
+        if (element == null)
+            throw new NoSuchElementException("there's no element any more");
+
         return element;
     }
-
-    
-    
 }
