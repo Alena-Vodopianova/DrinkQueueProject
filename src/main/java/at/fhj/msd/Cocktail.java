@@ -1,5 +1,3 @@
-Cocktail.java 
- 
 package at.fhj.msd;
  
 import java.util.ArrayList;
