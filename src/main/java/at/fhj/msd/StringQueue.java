@@ -1,3 +1,5 @@
+package at.fhj.msd;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -16,10 +18,11 @@ public class StringQueue implements IQueue {
 
     @Override
     public boolean offer(String obj) {
-        if (elements.size() < maxSize)
-            elements.add(obj);
-        else
+        if (elements.size() < maxSize) {
+            elements.add(obj); 
+        }else {
             return false;
+        }
 
         return true;
     }
@@ -38,25 +41,28 @@ public class StringQueue implements IQueue {
     @Override
     public String remove() {
         String element = poll();
-        if (element == null)
+        if (element == null) {
             throw new NoSuchElementException("there's no element any more");
+        }
 
         return element;
     }
 
     @Override
     public String peek() {
-        if (elements.size() > 0)
-            return elements.get(0);
-        else
+        if (elements.size() > 0) {
+            return elements.get(0); 
+        }else {
             return null;
+        }
     }
 
     @Override
     public String element() {
         String element = peek();
-        if (element == null)
+        if (element == null) {
             throw new NoSuchElementException("there's no element any more");
+        }
 
         return element;
     }
