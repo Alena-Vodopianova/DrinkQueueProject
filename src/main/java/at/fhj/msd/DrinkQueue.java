@@ -25,4 +25,13 @@ public class DrinkQueue {
     public int size() {
         return drinks.size();
     }
+
+    public boolean offer(Drink drink) {
+        return drinks.offer(drink);
+    }
+
+    public Drink poll() {
+        return drinks.poll();
+    }
 }
+

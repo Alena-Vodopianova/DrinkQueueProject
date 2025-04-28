@@ -1,34 +1,48 @@
+package at.fhj.msd;
 
-// fastly written (not really nice) comments you should adapt
+/**
+ * Defines a queue data structure for storing and manipulating String objects.
+ */
 public interface IQueue {
-  /** 
-   * I am a really bad comment
-   * 
-   * fasdfadsffdsadsf
-   * 
-   * fdsasdfadsf
-   * 
-   *  add object to queue, true if okay 
-   * 
-   * i fell asleep on my keyboard...
-   * 
-   * */ 
-  public abstract boolean offer(String obj);
 
-  //returns + del 1st element; null if nothing in there
-   //
-  public abstract String poll();
+    /**
+     * Adds the specified String to the queue.
+     *
+     * @param obj The String to add
+     * @return true if the String was added successfully, false if the queue is
+     * full (for bounded queues)
+     */
+    boolean offer(String obj);
 
-  /* 
-  same as poll, if there is nothing in there error NoSuchElementException
-   */
-  public abstract String remove();
+    /**
+     * Retrieves and removes the first String from the queue.
+     *
+     * @return The first String in the queue, or null if the queue is empty
+     */
+    String poll();
 
-  // 1st element without dlete, otherwise null
-   
-  public abstract String peek();
+    /**
+     * Retrieves and removes the first String from the queue, throwing an
+     * exception if the queue is empty.
+     *
+     * @return The first String in the queue
+     * @throws java.util.NoSuchElementException if the queue is empty
+     */
+    String remove();
 
-  // element is to peek what remove is to poll
-  
-  public abstract String element();
+    /**
+     * Retrieves the first String from the queue without removing it.
+     *
+     * @return The first String in the queue, or null if the queue is empty
+     */
+    String peek();
+
+    /**
+     * Retrieves the first String from the queue without removing it, throwing
+     * an exception if the queue is empty.
+     *
+     * @return The first String in the queue
+     * @throws java.util.NoSuchElementException if the queue is empty
+     */
+    String element();
 }
