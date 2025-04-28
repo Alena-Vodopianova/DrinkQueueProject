@@ -69,7 +69,7 @@ target/site/
  
 - **Afik Eschel** – Unit Testing, Branch Management
 - **Alena Vodopianova** – JavaDoc Documentation, DoubleQueue
-- **Oleh** – Maven Site Setup, Project Coordination
+- **Oleh Haievyi** – Maven Site Setup, Project Coordination
  
 ---
  
