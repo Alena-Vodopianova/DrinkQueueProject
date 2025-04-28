@@ -4,5 +4,7 @@
       <item name="Home" href="index.html"/>
       <item name="Good Coding Style" href="good_style.html"/>
     </menu>
+
+    <menu ref="reports"/>
   </body>
 </project>
