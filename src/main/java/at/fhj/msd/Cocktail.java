@@ -3,6 +3,9 @@ package at.fhj.msd;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class representing a cocktail made of multiple liquids.
+ */
 public class Cocktail extends Drink {
 
     private List<Liquid> liquids;
@@ -41,5 +44,15 @@ public class Cocktail extends Drink {
             }
         }
         return (alcoholVolume / totalVolume) * 100;
+    }
+
+    @Override
+    public boolean isAlcoholic() {
+        for (Liquid l : liquids) {
+            if (l.getAlcoholPercent() > 0) {
+                return true;
+            }
+        }
+        return false;
     }
 }
