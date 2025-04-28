@@ -34,4 +34,3 @@ public class DrinkQueue {
         return drinks.poll();
     }
 }
-
