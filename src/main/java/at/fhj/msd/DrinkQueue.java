@@ -10,4 +10,13 @@ public class DrinkQueue {
 
     private Queue<Drink> drinks = new LinkedList<>();
 
+    public Drink peek() {
+      return drinks.peek();
+    }
+  
+    public int size() {
+      return drinks.size();
+    }
+  
+
 }
