@@ -10,13 +10,13 @@ public class DrinkQueue {
 
     private Queue<Drink> drinks = new LinkedList<>();
 
-    public Drink peek() {
-      return drinks.peek();
+    public boolean offer(Drink drink) {
+        return drinks.offer(drink);
     }
-  
-    public int size() {
-      return drinks.size();
+
+    public Drink poll() {
+        return drinks.poll();
     }
-  
+
 
 }
